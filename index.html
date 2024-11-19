@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        /* General styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background: #0a0a0a; /* Dark background color */
+            color: #f0f0f0; /* Light text color for readability */
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background: linear-gradient(45deg, #0a0a0a, #222); /* Dark gradient */
+            color: #fff;
+            z-index: 10;
+            padding: 10px 0;
+            text-align: center;
+        }
+        header nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        header nav ul li {
+            display: inline;
+            margin: 0 20px;
+        }
+        header nav ul li a {
+            color: #00e5ff; /* Neon accent color */
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+        header nav ul li a:hover {
+            color: #ff4081; /* Hover effect */
+        }
+
+        /* Main content layout */
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 80px; /* To prevent overlap with fixed header */
+            width: 100%;
+        }
+
+        /* Hero Section with Welcome Message */
+        .hero {
+            width: 100%;
+            height: 100vh; /* Full viewport height */
+            background: linear-gradient(135deg, #1a1a1a, #333); /* Dark gradient background */
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            flex-direction: column; /* Ensure content stacks vertically */
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            text-shadow: 0 0 10px rgba(0, 229, 255, 0.8); /* Glowing text effect */
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero img {
+            border-radius: 50%;
+            margin-top: 20px;
+            width: 150px;
+            height: 150px;
+            border: 4px solid #00e5ff; /* Add a glowing border */
+        }
+
+        /* Section Container for Skills and Work */
+        .skills-work-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            width: 80%;
+            margin-top: 50px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Programming Skills Box */
+        .skills-box {
+            background: #212121; /* Dark background */
+            color: white;
+            border: 2px solid #444;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+            padding: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            border-radius: 15px;
+        }
+
+        .skills-box h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-align: center;
+            width: 100%;
+            text-shadow: 0 0 5px rgba(0, 229, 255, 0.5); /* Glowing effect on title */
+        }
+
+        .progress-circle {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: #1e1e1e; /* Dark background for circles */
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.5s ease;
+        }
+
+        .water-fill {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background-color: #00e5ff; /* Neon accent color */
+            transition: height 1s ease;
+        }
+
+        .percentage {
+            position: absolute;
+            color: white;
+            font-size: 0.8rem;
+            z-index: 5;
+        }
+
+        .language {
+            position: absolute;
+            color: white;
+            font-size: 0.7rem;
+            bottom: 5px;
+            z-index: 5;
+        }
+
+        /* Work Section */
+        .work-box {
+            background: #212121;
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .work-box h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .work-box .job {
+            margin-bottom: 15px;
+        }
+
+        .job-title {
+            font-size: 1.2rem;
+            color: #00e5ff;
+        }
+
+        .job-description {
+            font-size: 1rem;
+            margin-top: 5px;
+        }
+
+        /* About Me, References, and Résumé Section */
+        .about-me, .references, .resume {
+            width: 80%;
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #212121;
+            color: white;
+            border-radius: 15px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .about-me h2, .references h2, .resume h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #00e5ff;
+        }
+
+        .about-me p, .references p, .resume p {
+            font-size: 1.2rem;
+            line-height: 1.5;
+            text-align: justify;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #212121;
+            color: white;
+            font-size: 1rem;
+            margin-top: auto; /* Push footer to the bottom */
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .progress-circle {
+                width: 70px;
+                height: 70px;
+            }
+
+            .skills-box {
+                gap: 15px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .skills-work-container {
+                grid-template-columns: 1fr; /* Stack the sections vertically */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .progress-circle {
+                width: 60px;
+                height: 60px;
+            }
+
+            .skills-box {
+                gap: 10px;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero p {
+                font-size: 0.9rem;
+            }
+
+            footer {
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .progress-circle {
+                width: 50px;
+                height: 50px;
+            }
+
+            .skills-box {
+                gap: 10px;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .hero p {
+                font-size: 0.8rem;
+            }
+
+            section {
+                padding: 20px 10px;
+            }
+
+            footer {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+				<li><a href="#work">Work</a></li> <!-- Updated the link here -->
+                <li><a href="#resume">Résumé</a></li>
+                <li><a href="#references">References</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section with Welcome Message -->
+        <section id="home" class="hero">
+            <div>
+                <h1>Welcome to My Portfolio</h1>
+                <p>My mission is to continuously learn, grow, and apply my skills in technology to solve real-world problems.
+				   I strive to contribute value to every team I am a part of, while developing both my technical expertise and leadership abilities to drive meaningful impact.
+				</p>
+                <img src="your-profile-picture.jpg" alt="Profile Picture">
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="about-me">
+            <h2>About Me</h2>
+            <p>
+                Hello! I’m currently pursuing a degree in Computer Information Technology (CIT) at Lethbridge College, and I’m eager to kick-start my career in the tech field. I have a strong foundation in various programming languages such as C++, C#, Java, SQL, Python, and web technologies like HTML and CSS. Along with my programming skills, I am also experienced in networking, computer hardware, and using tools like Microsoft Office and PowerPoint.
+
+				I am passionate about learning and enjoy developing new skills, which is why I’m always seeking ways to fill knowledge gaps and offer value to any team I’m part of. My experience in web programming with Apache and working with databases has also prepared me for a career in IT.
+
+				Although I’m still in school, I’ve already had the opportunity to develop valuable soft skills through my work experience at McDonald’s and Canyon Meadows Golf and Country Club. I started out in roles like cook and order taker and quickly advanced to crew trainer at a new branch, where I learned the importance of leadership, communication, and team collaboration. I also worked as a dishwasher, learning the value of attention to detail and hard work in any role.
+
+				Outside of academics and work, I have a strong interest in sports, computers, and music. I enjoy staying active and am always exploring new technology trends and musical genres.
+
+				I’m eager to apply what I’ve learned in school and through my work experience to a full-time role, and I’m excited about the opportunity to grow, contribute, and make an impact within a forward-thinking company.
+			</p>
+        </section>
+
+        <!-- Programming Skills and Work Experience Sections -->
+        <section class="skills-work-container">
+            <div class="skills-box">
+                <h2>Programming Skills</h2>
+                   <div class="progress-container">
+            <div class="progress-circle" data-percentage="90">
+                <div class="water-fill" style="height: 90%;"></div>
+                <div class="percentage">90%</div>
+                <div class="language">HTML</div>
+            </div>
+            <div class="progress-circle" data-percentage="80">
+                <div class="water-fill" style="height: 80%;"></div>
+                <div class="percentage">80%</div>
+                <div class="language">CSS</div>
+            </div>
+            <div class="progress-circle" data-percentage="70">
+                <div class="water-fill" style="height: 70%;"></div>
+                <div class="percentage">70%</div>
+                <div class="language">JavaScript</div>
+            </div>
+            <div class="progress-circle" data-percentage="60">
+                <div class="water-fill" style="height: 60%;"></div>
+                <div class="percentage">60%</div>
+                <div class="language">Python</div>
+            </div>
+            <div class="progress-circle" data-percentage="50">
+                <div class="water-fill" style="height: 50%;"></div>
+                <div class="percentage">50%</div>
+                <div class="language">PHP</div>
+            </div>
+        </div>
+            </div>
+
+            <div class="work-box" id="work">
+                <h2>Work Experience</h2>
+                <div class="job">
+                    <div class="job-title">Crew Trainer at McDonald's</div>
+                    <div class="job-description">
+                        Trained new employees in a fast-paced environment, focusing on customer service and teamwork.
+                    </div>
+                </div>
+                <div class="job">
+                    <div class="job-title">Dishwasher at Canyon Meadows Golf and Country Club</div>
+                    <div class="job-description">
+                        Maintained cleanliness in a high-volume kitchen while adhering to safety and sanitation guidelines.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- References Section -->
+        <section id="references" class="references">
+            <h2>References</h2>
+            <p>
+                Available upon request. Feel free to contact me for further details about my qualifications and experiences.
+            </p>
+        </section>
+
+        <!-- Résumé Section -->
+        <section id="resume" class="resume">
+            <h2>Résumé</h2>
+            <p>
+                My résumé is available for download here. You can also reach out to me via email for more details about my qualifications and projects.
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Your Name. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
