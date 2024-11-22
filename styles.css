@@ -1,0 +1,196 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: #0a0a0a; /* Dark background color */
+    color: #f0f0f0; /* Light text color for readability */
+  }
+  
+  /* Header */
+  header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(45deg, #0a0a0a, #222); /* Dark gradient */
+    color: #fff;
+    z-index: 10;
+    padding: 10px 0;
+    text-align: center;
+  }
+  header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  header nav ul li {
+    display: inline;
+    margin: 0 20px;
+  }
+  header nav ul li a {
+    color: #00e5ff; /* Neon accent color */
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+  }
+  header nav ul li a:hover {
+    color: #ff4081; /* Hover effect */
+  }
+  
+  /* Main content layout */
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 80px; /* To prevent overlap with fixed header */
+    width: 100%;
+  }
+  
+  /* Hero Section with Welcome Message */
+  .hero {
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    background: linear-gradient(
+      135deg,
+      #1a1a1a,
+      #333
+    ); /* Dark gradient background */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    flex-direction: column; /* Ensure content stacks vertically */
+  }
+  
+  .hero img {
+    margin-top: 20px;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+  }
+  
+  /* About Me section */
+  .about-me {
+    width: 80%;
+    max-width: 1200px;
+    margin: 50px auto;
+    text-align: center;
+  }
+  .tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  .tab-btn {
+    background-color: #444;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 0 10px;
+  }
+  .tab-btn:hover {
+    background-color: #ff4081; /* Hover color for tabs */
+  }
+  .tab-content {
+    display: none;
+    margin-top: 20px;
+  }
+  .tab-content.active {
+    display: block;
+  }
+  
+  .skills-work-container {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    max-width: 1200px;
+    margin: 50px auto;
+  }
+  
+  .skills-box, .work-box {
+    width: 48%;
+  }
+  
+  .progress-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .progress-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #555;
+    position: relative;
+    margin: 10px;
+  }
+  .water-fill {
+    background-color: #00e5ff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    transition: height 1s ease-out;
+  }
+  .percentage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 20px;
+  }
+  .language {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 12px;
+  }
+  
+  .job {
+    margin-bottom: 20px;
+  }
+  
+  .job-title {
+    font-weight: bold;
+  }
+  
+  .job-description {
+    font-style: italic;
+  }
+  
+  .references, .Resume {
+    text-align: center;
+  }
+  
+  .resume-view a {
+    text-decoration: none;
+    color: #ff4081;
+    font-weight: bold;
+    font-size: 18px;
+    transition: color 0.3s ease;
+  }
+  
+  .resume-view a:hover {
+    color: #00e5ff; /* Change to light blue on hover */
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #222;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    margin-top: auto;
+  }
+  
