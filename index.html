@@ -41,12 +41,16 @@
       <!-- About Me Section -->
       <section id="about" class="about-me">
         <h2>About Me</h2>
+        
+        <!-- Tab navigation -->
         <div class="tabs">
           <button class="tab-btn active" onclick="showTab('skills')">Skills & Expertise</button>
           <button class="tab-btn" onclick="showTab('experience')">Work Experience</button>
           <button class="tab-btn" onclick="showTab('passions')">Passions & Interests</button>
           <button class="tab-btn" onclick="showTab('looking')">What I’m Looking For</button>
         </div>
+      
+        <!-- Tab content -->
         <div id="skills" class="tab-content active">
           <p>💻 <strong>Programming</strong><br>
              C++, C#, Java, SQL, Python<br>
@@ -60,6 +64,7 @@
              Microsoft Office and PowerPoint
           </p>
         </div>
+      
         <div id="experience" class="tab-content">
           <p>🍔 <strong>McDonald’s</strong><br>
              Cook and order taker; promoted to Crew Trainer.<br>
@@ -69,15 +74,41 @@
              Dishwasher; developed attention to detail and work ethic.
           </p>
         </div>
+      
         <div id="passions" class="tab-content">
           <p>⚽ <strong>Hobbies:</strong> Sports, computers, and music.<br>
              🎵 I enjoy staying active, exploring new technology trends, and discovering new music genres.
           </p>
         </div>
+      
         <div id="looking" class="tab-content">
           <p>🚀 I’m excited to apply my skills and experiences in a full-time role, where I can contribute to a forward-thinking company, grow professionally, and make an impact.</p>
         </div>
       </section>
+      
+      <script>
+        function showTab(tabName) {
+          // Hide all tab content
+          var contents = document.querySelectorAll('.tab-content');
+          for (var i = 0; i < contents.length; i++) {
+            contents[i].classList.remove('active');
+          }
+          
+          // Remove the 'active' class from all tab buttons
+          var buttons = document.querySelectorAll('.tab-btn');
+          for (var i = 0; i < buttons.length; i++) {
+            buttons[i].classList.remove('active');
+          }
+          
+          // Show the selected tab content
+          document.getElementById(tabName).classList.add('active');
+          
+          // Add the 'active' class to the clicked tab button
+          var activeButton = Array.from(buttons).find(button => button.textContent.toLowerCase() === tabName.replace('-', ' '));
+          activeButton.classList.add('active');
+        }
+      </script>
+      
 
       <section class="skills-work-container">
         <div class="skills-box">
