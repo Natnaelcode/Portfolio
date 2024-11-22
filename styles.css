@@ -97,11 +97,11 @@ main {
 }
 
 .tab-btn:hover {
-    background-color: #00e5ff; /* Highlight color */
+    background-color: #37e3e3; /* Highlight color */
 }
 
 .tab-btn.active {
-    background-color: #00e5ff; /* Active tab color */
+    background-color: #22eaea; /* Active tab color */
     color: black;
 }
 
