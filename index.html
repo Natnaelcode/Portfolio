@@ -12,9 +12,8 @@
         <ul>
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
-          <li><a href="#work">Work</a></li>
-          <li><a href="#Resume">Résumé</a></li>
           <li><a href="#references">References</a></li>
+          <li><a href="#resume">Résumé</a></li>
         </ul>
       </nav>
     </header>
@@ -32,7 +31,7 @@
             impact.
           </p>
           <img
-            src="C:/Users/15873/OneDrive/Desktop/Portfolio/image.jpg"
+            src="C:/Users/15873/OneDrive/Desktop/Portfolio/image.jpg "
             alt="Profile Picture"
           />
         </div>
@@ -41,154 +40,146 @@
       <!-- About Me Section -->
       <section id="about" class="about-me">
         <h2>About Me</h2>
-        
+
         <!-- Tab navigation -->
         <div class="tabs">
-          <button class="tab-btn active" onclick="showTab('skills')">Skills & Expertise</button>
-          <button class="tab-btn" onclick="showTab('experience')">Work Experience</button>
-          <button class="tab-btn" onclick="showTab('passions')">Passions & Interests</button>
-          <button class="tab-btn" onclick="showTab('looking')">What I’m Looking For</button>
+          <button class="tab-btn active" onclick="showTab('skills')">
+            Skills & Expertise
+          </button>
+          <button class="tab-btn" onclick="showTab('experience')">
+            Work Experience
+          </button>
+          <button class="tab-btn" onclick="showTab('passions')">
+            Passions & Interests
+          </button>
+          <button class="tab-btn" onclick="showTab('looking')">
+            What I’m Looking For
+          </button>
         </div>
-      
+
         <!-- Tab content -->
         <div id="skills" class="tab-content active">
-          <p>💻 <strong>Programming</strong><br>
-             C++, C#, Java, SQL, Python<br>
-             Web technologies: HTML, CSS, JavaScript<br>
-             Web programming: Apache, PHP
-          </p>
-          <p>🔧 <strong>Technical Skills</strong><br>
-             Networking<br>
-             Computer hardware<br>
-             Database management<br>
-             Microsoft Office and PowerPoint
-          </p>
+          <div class="skills-work-container">
+            <div class="skills-box">
+              <h2>Programming Skills</h2>
+              <div class="skills">
+                <div class="skill">
+                  <div class="circle" data-percentage="90"></div>
+                  <p>HTML</p>
+                </div>
+                <div class="skill">
+                  <div class="circle" data-percentage="80"></div>
+                  <p>CSS</p>
+                </div>
+                <div class="skill">
+                  <div class="circle" data-percentage="70"></div>
+                  <p>JavaScript</p>
+                </div>
+                <div class="skill">
+                  <div class="circle" data-percentage="60"></div>
+                  <p>Python</p>
+                </div>
+                <div class="skill">
+                  <div class="circle" data-percentage="50"></div>
+                  <p>PHP</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      
+
         <div id="experience" class="tab-content">
-          <p>🍔 <strong>McDonald’s</strong><br>
-             Cook and order taker; promoted to Crew Trainer.<br>
-             Gained leadership, communication, and teamwork skills.
+          <p>
+            🍔 <strong>McDonald’s</strong><br />
+            Cook and order taker; promoted to Crew Trainer.<br />
+            Gained leadership, communication, and teamwork skills.
           </p>
-          <p>🍴 <strong>Canyon Meadows Golf and Country Club</strong><br>
-             Dishwasher; developed attention to detail and work ethic.
+          <p>
+            🍴 <strong>Canyon Meadows Golf and Country Club</strong><br />
+            Dishwasher; developed attention to detail and work ethic.
           </p>
         </div>
-      
+
         <div id="passions" class="tab-content">
-          <p>⚽ <strong>Hobbies:</strong> Sports, computers, and music.<br>
-             🎵 I enjoy staying active, exploring new technology trends, and discovering new music genres.
+          <p>
+            ⚽ <strong>Hobbies:</strong> Sports, computers, and music.<br />
+            🎵 I enjoy staying active, exploring new technology trends, and
+            discovering new music genres.
           </p>
         </div>
-      
+
         <div id="looking" class="tab-content">
-          <p>🚀 I’m excited to apply my skills and experiences in a full-time role, where I can contribute to a forward-thinking company, grow professionally, and make an impact.</p>
-        </div>
-      </section>
-      
-      <script>
-        function showTab(tabName) {
-          // Hide all tab content
-          var contents = document.querySelectorAll('.tab-content');
-          for (var i = 0; i < contents.length; i++) {
-            contents[i].classList.remove('active');
-          }
-          
-          // Remove the 'active' class from all tab buttons
-          var buttons = document.querySelectorAll('.tab-btn');
-          for (var i = 0; i < buttons.length; i++) {
-            buttons[i].classList.remove('active');
-          }
-          
-          // Show the selected tab content
-          document.getElementById(tabName).classList.add('active');
-          
-          // Add the 'active' class to the clicked tab button
-          var activeButton = Array.from(buttons).find(button => button.textContent.toLowerCase() === tabName.replace('-', ' '));
-          activeButton.classList.add('active');
-        }
-      </script>
-      
-
-      <section class="skills-work-container">
-        <div class="skills-box">
-          <h2>Programming Skills</h2>
-          <div class="progress-container">
-            <div class="progress-circle" data-percentage="90">
-              <div class="water-fill" style="height: 90%"></div>
-              <div class="percentage">90%</div>
-              <div class="language">HTML</div>
-            </div>
-            <div class="progress-circle" data-percentage="80">
-              <div class="water-fill" style="height: 80%"></div>
-              <div class="percentage">80%</div>
-              <div class="language">CSS</div>
-            </div>
-            <div class="progress-circle" data-percentage="70">
-              <div class="water-fill" style="height: 70%"></div>
-              <div class="percentage">70%</div>
-              <div class="language">JavaScript</div>
-            </div>
-            <div class="progress-circle" data-percentage="60">
-              <div class="water-fill" style="height: 60%"></div>
-              <div class="percentage">60%</div>
-              <div class="language">Python</div>
-            </div>
-            <div class="progress-circle" data-percentage="50">
-              <div class="water-fill" style="height: 50%"></div>
-              <div class="percentage">50%</div>
-              <div class="language">PHP</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="work-box" id="work">
-          <h2>Work Experience</h2>
-          <div class="job">
-            <div class="job-title">Crew Trainer at McDonald's</div>
-            <div class="job-description">
-              Trained new employees in a fast-paced environment, focusing on
-              customer service and teamwork.
-            </div>
-          </div>
-          <div class="job">
-            <div class="job-title">
-              Dishwasher at Canyon Meadows Golf and Country Club
-            </div>
-            <div class="job-description">
-              Maintained cleanliness in a high-volume kitchen while adhering to
-              safety and sanitation guidelines.
-            </div>
-          </div>
+          <p>
+            🚀 I’m excited to apply my skills and experiences in a full-time
+            role, where I can contribute to a forward-thinking company, grow
+            professionally, and make an impact.
+          </p>
         </div>
       </section>
 
+      <!-- References Section -->
       <section id="references" class="references">
         <h2>References</h2>
-        <p>
-          You can view my professional references by clicking the button below. It will open in a new tab.
-        </p>
+
+        <!-- Table for Reference -->
+        <table class="resume-table">
+          <tbody>
+            <tr>
+              <td>
+                <br><strong>Reference From</strong></br>
+                Timothy D. Frantz, CIS<br />
+                Instructor, Computer Information Technology<br />
+                Lethbridge Polytechnic<br />
+                3000 College Dr. S, Lethbridge, AB T1K 1L6<br />
+                Phone: 403-320-3202 x5574<br />
+                Cell: 403-330-2656<br />
+                Email: timothy.frantz@lethpolytech.ca
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
         <div class="resume-view">
           <a
             href="Natnael Tsegay Reference.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            >View My References</a>
+            >View My Reference (PDF)</a
+          >
         </div>
       </section>
 
-      <section id="Resume" class="Resume">
+      <!-- Resume Section -->
+      <section id="resume" class="resume">
         <h2>Résumé</h2>
-        <p>
-          My résumé is available for download here. You can also reach out to me
-          via email for more details about my qualifications and projects.
-        </p>
+        <!-- Table for Resume -->
+        <table class="resume-table">
+          <tbody>
+            <tr>
+              <td><strong>Contact</strong></td>
+              <td>
+                Natnael Tsegay<br />
+                Calgary, AB T2D 5GJ, Canada<br />
+                Phone: 587-306-0124<br />
+                Email: Natnael.tsegay@lethpolytech.ca
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Objective</strong></td>
+              <td>
+                Current student working toward a Degree in Computer Information
+                Technology and seeking an opportunity to begin my career. I
+                identify and quickly close any knowledge gaps to offer value to
+                my employer and team.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
         <div class="resume-view">
-          <a
-            href="Resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            >View  My Resume</a>
+          <a href="Resume.pdf" target="_blank" rel="noopener noreferrer"
+            >View My Resume (PDF)</a
+          >
         </div>
       </section>
     </main>
@@ -196,5 +187,9 @@
     <footer>
       <p>&copy; 2024 Natnael Tsegay. All Rights Reserved.</p>
     </footer>
+
+    <!-- At the end of the body tag in index.html -->
+<script src="script.js"></script>
+
   </body>
 </html>
