@@ -64,23 +64,11 @@ main {
     flex-direction: column; /* Ensure content stacks vertically */
 }
 
-  
-  .hero table {
-    width: 100%;
-    height: 100%;
-    border: none;
-  }
-  
-  .hero td {
-    vertical-align: middle; /* Centers the content vertically */
-  }
-  
-  .hero img {
+.hero img {
     width: 40vw; /* 40% of viewport width */
     height: auto; /* Maintain aspect ratio */
     border-radius: 50%; /* Circular image */
-  }
-  
+}
 
 /* About Me section */
 .about-me {
@@ -168,11 +156,6 @@ main {
     border-radius: 50%;
     border: 10px solid #555;
     position: relative;
-    transition: transform 0.3s ease;
-}
-
-.circle:hover {
-    transform: scale(1.1);
 }
 
 .circle::before {
@@ -234,27 +217,6 @@ p {
   font-size: 2rem;
 }
 
-.reference, .resume-item {
-  margin-top: 20px;
-}
-
-.resume-view {
-  text-align: center;
-  margin-top: 20px;
-}
-
-.resume-view a {
-  text-decoration: none;
-  color: #00e5ff;
-  font-weight: bold;
-  font-size: 18px;
-  transition: color 0.3s ease;
-}
-
-.resume-view a:hover {
-  color: #ff4081;
-}
-
 /* Footer */
 footer {
     background-color: #222;
@@ -264,19 +226,27 @@ footer {
     margin-top: auto;
 }
 
+/* Back-to-Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #00e5ff;
+    color: #fff;
+    padding: 10px 15px;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
 /* Mobile responsiveness */
 @media (max-width: 768px) {
-    header nav ul li {
-        margin: 0 10px;
-    }
-
-    .hero {
-        height: auto;
-        padding: 50px 20px;
-    }
-
-    .hero h1 {
-        font-size: 2rem;
+    .hero img {
+        width: 60%; /* Adjust image size for tablets */
     }
 
     .skills-work-container {
@@ -305,6 +275,10 @@ footer {
         height: 120px;
     }
 
+    h1, h2 {
+        font-size: 1.5rem;
+    }
+
     .circle {
         width: 80px;
         height: 80px;
@@ -314,7 +288,7 @@ footer {
         font-size: 1rem;
     }
 
-    .resume-view a {
-        font-size: 16px;
+    p {
+        font-size: 14px;
     }
 }
