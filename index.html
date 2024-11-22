@@ -19,43 +19,27 @@
     </header>
 
     <main>
-      <!-- Hero Section with Welcome Message -->
-      <section id="home" class="hero">
-        <div>
-          <h1>Natnael Tsegay's Portfolio</h1>
-          <p>
-            My mission is to continuously learn, grow, and apply my skills in
-            technology to solve real-world problems. I strive to contribute
-            value to every team I am a part of, while developing both my
-            technical expertise and leadership abilities to drive meaningful
-            impact.
-          </p>
-          <img src=" image.JPG" alt="Profile Picture" />
+     <!-- Hero Section with Welcome Message -->
+<section id="home" class="hero">
+  <table style="width: 100%; height: 100vh; border: none; text-align: center; margin: 0;">
+    <tr>
+      <!-- Profile Image Column -->
+      <td style="width: 20%; vertical-align: middle; padding-left: 20px;">
+        <img src="image.JPG" alt="Profile Picture" style="width: 20vw; height: auto; border-radius: 50%;" />
+      </td>
 
-        </div>
-      </section>
+      <!-- Content Column -->
+      <td style="vertical-align: middle;">
+        <h1>Natnael Tsegay's Portfolio</h1>
+        <p>
+          My mission is to continuously learn, grow, and apply my skills in
+          technology to solve real-world problems. I strive to contribute
+          value to every team I am a part of, while developing both my
+          technical expertise and leadership abilities to drive meaningful
+          impact.
+        </p>
 
-      <!-- About Me Section -->
-      <section id="about" class="about-me">
-        <h2>About Me</h2>
-
-        <!-- Tab navigation -->
-        <div class="tabs">
-          <button class="tab-btn active" onclick="showTab('skills')">
-            Skills & Expertise
-          </button>
-          <button class="tab-btn" onclick="showTab('experience')">
-            Work Experience
-          </button>
-          <button class="tab-btn" onclick="showTab('passions')">
-            Passions & Interests
-          </button>
-          <button class="tab-btn" onclick="showTab('looking')">
-            What I’m Looking For
-          </button>
-        </div>
-
-        <!-- Tab content -->
+        <!-- Tab content for Skills Section -->
         <div id="skills" class="tab-content active">
           <div class="skills-work-container">
             <div class="skills-box">
@@ -75,7 +59,11 @@
                 </div>
                 <div class="skill">
                   <div class="circle" data-percentage="60"></div>
-                  <p>Python</p>
+                  <p>C#</p>
+                </div>
+                <div class="skill">
+                  <div class="circle" data-percentage="80"></div>
+                  <p>Apache</p>
                 </div>
                 <div class="skill">
                   <div class="circle" data-percentage="50"></div>
@@ -84,6 +72,28 @@
               </div>
             </div>
           </div>
+        </div>
+      </td>
+    </tr>
+  </table>
+</section>
+
+
+      <!-- About Me Section -->
+      <section id="about" class="about-me">
+        <h2>About Me</h2>
+
+        <!-- Tab navigation -->
+        <div class="tabs">
+          <button class="tab-btn" onclick="showTab('experience')">
+            Work Experience
+          </button>
+          <button class="tab-btn" onclick="showTab('passions')">
+            Passions & Interests
+          </button>
+          <button class="tab-btn" onclick="showTab('looking')">
+            What I’m Looking For
+          </button>
         </div>
 
         <div id="experience" class="tab-content">
