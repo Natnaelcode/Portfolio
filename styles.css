@@ -217,6 +217,63 @@ p {
   font-size: 2rem;
 }
 
+.projects {
+    padding: 50px 20px;
+    text-align: center;
+    color: #f0f0f0;
+}
+
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.project-card {
+    background-color: #212121;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    width: 300px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+.project-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.project-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.project-card a {
+    text-decoration: none;
+    color: #00e5ff;
+    font-weight: bold;
+}
+
+.project-card a:hover {
+    color: #ff4081;
+}
+
+
 /* Footer */
 footer {
     background-color: #222;
